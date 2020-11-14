@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div background-image: url("used-car-valuation.png");>
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Used car valuation using Linear regression</h2>
+            <h3>Year</h3>
+            <input id="make" name="Year" type="number " value="e.g 2017">
+            <h3>What is the Showroom Price?(In lakhs)</h3><br><input id="exPrice" name="Present_Price" required="required" value="e.g 3.5">
+            <h3>How Many Kilometers Driven?</h3><input id="kms" name="Kms_Driven" required="required" value="e.g 10000">
+            <h3>How many owners ,previously had own the car(0 or 1 or 2)?</h3><br><input id="pown" name="Owner" required="required">
+            <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select>
+            <h3>Are you A Dealer or Individual?</h3><br><select name="Seller_Type_Individual" id="Seller" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3>Transmission type</h3><br><select name="Transmission_Mannual" id="Trans" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><br><button id="submission" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}</h3>
+    </div>
+
+
+
+
+
+    <style>
+	div{
+            background-image: url('img_girl.jpg');
+            position: absolute;
+            right: 140px;
+            
+            
+        }
+        body {
+ 	    background-image: url("used-car-valuation.png");
+            background-position: center; /* Center the image */
+ 	    background-repeat: no-repeat; /* Do not repeat the image */
+ 	    background-size: cover;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #Trans {
+            font-size: 18px;
+            width: 180px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #Seller {
+            width: 140px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #Seller:hover {
+            background-color: coral;
+        }
+        
+        #submission {
+            width: 160px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+	    
+        }
+        
+        #submission:hover {
+            background-color: darkcyan;
+        }
+        
+        #make {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #exPrice {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #kms {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #pown {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+	
+
+    </style>
+</body>
+
+</html>
